@@ -25,9 +25,10 @@ public class PersonaServiceImpl {
                 : personaRepository.findById(request.getId()).orElse(null));
         if(c != null){
             c.setNombre(request.getNombre());
-            return true;
+            personaRepository.save(c);
+            return Boolean.TRUE;
         }else {
-            return false;
+            return Boolean.FALSE;
         }
 
     }

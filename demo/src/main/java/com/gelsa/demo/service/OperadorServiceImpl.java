@@ -25,9 +25,10 @@ public class OperadorServiceImpl {
                 : operadorRepository.findById(request.getId()).orElse(null));
         if(c != null){
             c.setNombre(request.getNombre());
-            return true;
+            operadorRepository.save(c);
+            return Boolean.TRUE;
         }else {
-            return false;
+            return Boolean.FALSE;
         }
 
     }

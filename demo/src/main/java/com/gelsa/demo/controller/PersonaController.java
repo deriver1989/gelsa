@@ -1,13 +1,12 @@
 package com.gelsa.demo.controller;
 
-
-
 import com.gelsa.demo.dto.PersonaDTO;
 import com.gelsa.demo.response.ResponseDTO;
 import com.gelsa.demo.service.PersonaServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
 
 @RestController
 public class PersonaController {
@@ -19,7 +18,7 @@ public class PersonaController {
 
     //CREAR PERSONA
     @PostMapping("/persona/crear")
-    public ResponseDTO guardarOperador(@RequestBody PersonaDTO request){
+    public ResponseDTO guardarOperador( @RequestBody PersonaDTO request){
         try {
             ResponseDTO response = null;
             if(personaServiceImpl.guardarPersona(request)) {

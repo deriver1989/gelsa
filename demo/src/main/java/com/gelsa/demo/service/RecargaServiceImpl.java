@@ -36,9 +36,10 @@ public class RecargaServiceImpl {
             c.setValorRecarga(request.getValor());
             c.setId_operador(o);
             c.setId_persona(p);
-            return true;
+            recargaRepository.save(c);
+            return Boolean.TRUE;
         }else {
-            return false;
+            return Boolean.FALSE;
         }
 
     }
