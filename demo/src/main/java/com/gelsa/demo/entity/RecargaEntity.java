@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name="persona")
+@Table(name="recarga")
 
 public class RecargaEntity {
     @Id
@@ -20,8 +20,43 @@ public class RecargaEntity {
 
     private Double valorRecarga;
 
-    private Long idPersona;
+    @ManyToOne
+    @JoinColumn(name = "id_persona")
+    private PersonaEntity id_persona;
 
-    private Long idOperador;
+    @ManyToOne
+    @JoinColumn(name = "id_operador")
+    private OperadorEntity id_operador;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Double getValorRecarga() {
+        return valorRecarga;
+    }
+
+    public void setValorRecarga(Double valorRecarga) {
+        this.valorRecarga = valorRecarga;
+    }
+
+    public PersonaEntity getId_persona() {
+        return id_persona;
+    }
+
+    public void setId_persona(PersonaEntity id_persona) {
+        this.id_persona = id_persona;
+    }
+
+    public OperadorEntity getId_operador() {
+        return id_operador;
+    }
+
+    public void setId_operador(OperadorEntity id_operador) {
+        this.id_operador = id_operador;
+    }
 }

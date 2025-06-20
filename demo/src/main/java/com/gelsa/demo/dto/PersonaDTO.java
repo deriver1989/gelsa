@@ -1,25 +1,16 @@
-package com.gelsa.demo.entity;
+package com.gelsa.demo.dto;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
+import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Entity
-@Table(name="persona")
+@Setter
+@Getter
+public class PersonaDTO {
 
-public class PersonaEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String nombre;
 
     public Long getId() {
