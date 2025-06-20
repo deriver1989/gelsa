@@ -31,7 +31,7 @@ public class RecargaServiceImpl {
             o.setId(request.getOperador());
 
             PersonaEntity p = new PersonaEntity();
-            o.setId(request.getPersona());
+            p.setId(request.getPersona());
 
             c.setValorRecarga(request.getValor());
             c.setId_operador(o);
